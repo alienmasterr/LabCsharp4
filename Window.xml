@@ -1,0 +1,20 @@
+<StackPanel Orientation="Horizontal" Margin="10">
+    <Button Content="Додати" Command="{Binding AddCommand}" Margin="5"/>
+    <Button Content="Редагувати" Command="{Binding EditCommand}" Margin="5"/>
+    <Button Content="Видалити" Command="{Binding DeleteCommand}" Margin="5"/>
+    <TextBox Width="200" PlaceholderText="Пошук..." Text="{Binding SearchQuery}" Margin="5"/>
+</StackPanel>
+
+<DataGrid ItemsSource="{Binding FilteredPeople}" SelectedItem="{Binding SelectedPerson}" 
+          AutoGenerateColumns="False" Margin="10" CanUserSortColumns="True">
+    <DataGrid.Columns>
+        <DataGridTextColumn Header="Ім'я" Binding="{Binding FirstName}"/>
+        <DataGridTextColumn Header="Прізвище" Binding="{Binding LastName}"/>
+        <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
+        <DataGridTextColumn Header="Дата народження" Binding="{Binding BirthDate}"/>
+        <DataGridTextColumn Header="Вік" Binding="{Binding Age}"/>
+        <DataGridTextColumn Header="Дорослий" Binding="{Binding IsAdult}"/>
+        <DataGridTextColumn Header="Знак Зодіаку" Binding="{Binding SunSign}"/>
+        <DataGridTextColumn Header="Китайський знак" Binding="{Binding ChineseSign}"/>
+    </DataGrid.Columns>
+</DataGrid>
